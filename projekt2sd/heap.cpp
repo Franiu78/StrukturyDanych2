@@ -99,5 +99,5 @@ void HeapPriorityQueue<T>::print() const {
 
 
 // Instancjowanie szablonu dla typów, których u¿yjesz:
-template class HeapPriorityQueue<string>;
-template struct Element<string>;
+template class HeapPriorityQueue<int>;
+template struct Element<int>;

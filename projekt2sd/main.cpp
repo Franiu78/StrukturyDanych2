@@ -3,16 +3,16 @@
 #include <string>
 
 int main() {
-    HeapPriorityQueue<std::string> queue;
+    HeapPriorityQueue<int> queue;
 
-    queue.push("A", 3);
-    queue.push("B", 1);
-    queue.push("C", 5);
+    queue.push(3, 3);
+    queue.push(1, 1);
+    queue.push(5, 5);
 
-    std::cout << "Peek: " << queue.peek() << "\n"; // B
+    std::cout << "Peek: " << queue.peek() << "\n"; // 1
 
-    queue.changePriority("C", 0);
-    std::cout << "Peek after priority change: " << queue.peek() << "\n"; // C
+    queue.changePriority(5, 0);
+    std::cout << "Peek after priority change: " << queue.peek() << "\n"; // 5
     queue.print();
     while (!queue.empty()) {
         std::cout << "Pop: " << queue.peek() << "\n";
