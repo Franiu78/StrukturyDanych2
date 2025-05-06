@@ -13,7 +13,7 @@ int main() {
 
     queue.changePriority("C", 0);
     std::cout << "Peek after priority change: " << queue.peek() << "\n"; // C
-
+    queue.print();
     while (!queue.empty()) {
         std::cout << "Pop: " << queue.peek() << "\n";
         queue.pop();

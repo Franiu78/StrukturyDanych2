@@ -1,7 +1,9 @@
 #include "heap.h"
 #include <stdexcept>
 #include <algorithm>
+#include <iostream>
 
+using namespace std;
 template <typename T>
 bool Element<T>::operator<(const Element<T>& other) const {
     return priority < other.priority;
@@ -17,7 +19,7 @@ void HeapPriorityQueue<T>::heapifyUp(int index) {
     while (index > 0) {
         int parent = (index - 1) / 2;
         if (heap[index] < heap[parent]) {
-            std::swap(heap[index], heap[parent]);
+            swap(heap[index], heap[parent]);
             index = parent;
         }
         else break;
@@ -36,7 +38,7 @@ void HeapPriorityQueue<T>::heapifyDown(int index) {
         if (right < size && heap[right] < heap[smallest]) smallest = right;
 
         if (smallest != index) {
-            std::swap(heap[index], heap[smallest]);
+            swap(heap[index], heap[smallest]);
             index = smallest;
         }
         else break;
@@ -51,7 +53,7 @@ void HeapPriorityQueue<T>::push(const T& value, int priority) {
 
 template <typename T>
 void HeapPriorityQueue<T>::pop() {
-    if (heap.empty()) throw std::out_of_range("Queue is empty");
+    if (heap.empty()) throw out_of_range("Queue is empty");
     heap[0] = heap.back();
     heap.pop_back();
     heapifyDown(0);
@@ -59,7 +61,7 @@ void HeapPriorityQueue<T>::pop() {
 
 template <typename T>
 const T& HeapPriorityQueue<T>::peek() const {
-    if (heap.empty()) throw std::out_of_range("Queue is empty");
+    if (heap.empty()) throw out_of_range("Queue is empty");
     return heap[0].value;
 }
 
@@ -87,6 +89,15 @@ bool HeapPriorityQueue<T>::changePriority(const T& value, int newPriority) {
     return false;
 }
 
+template <typename T>
+void HeapPriorityQueue<T>::print() const {
+    cout << "Queue contents:\n";
+    for (const auto& elem : heap) {
+        cout << "(" << elem.value << ", " << elem.priority << ")\n";
+    }
+}
+
+
 // Instancjowanie szablonu dla typów, których u¿yjesz:
-template class HeapPriorityQueue<std::string>;
-template struct Element<std::string>;
+template class HeapPriorityQueue<string>;
+template struct Element<string>;

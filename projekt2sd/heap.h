@@ -27,6 +27,8 @@ public:
     size_t size() const;
     bool empty() const;
     bool changePriority(const T& value, int newPriority);
+    void print() const;
+
 };
 
 #endif // HEAP_H
