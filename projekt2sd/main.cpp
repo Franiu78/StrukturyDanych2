@@ -53,7 +53,7 @@ int main() {
     cout << "===== TESTY WYDAJNOSCI KOLEJEK PRIORYTETOWYCH =====" << endl;
     
     // Liczba testów dla każdej operacji
-    int numTests = 100;
+    int numTests = 1000;
     
     // Testujemy różne rozmiary kolejek
     vector<int> sizes = {100, 1000, 10000, 50000};
