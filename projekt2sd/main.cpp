@@ -15,7 +15,7 @@ int getRandomValue(int min, int max) {
     static random_device rd;
     static mt19937 gen(rd());
     uniform_int_distribution<int> dist(min, max);
-    return dist(min, max);
+    return dist(gen);
 }
 
 // Funkcja zapisująca wyniki testów do pliku CSV
