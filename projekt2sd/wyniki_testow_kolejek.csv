@@ -1,0 +1,5 @@
+Rozmiar,Heap-Push,LinkedList-Push,Heap-Pop,LinkedList-Pop,Heap-Peek,LinkedList-Peek,Heap-ChangePriority,LinkedList-ChangeP,Heap-Size,LinkedList-Size
+100,163,90,124,72,23,19,325,171,18,16
+1000,131,898,243,75,22,19,2652,2801,18,17
+10000,84,30020,426,103,22,19,18533,40105,22,23
+50000,65,238494,543,180,22,22,76511,474555,18,16
